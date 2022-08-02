@@ -1,0 +1,34 @@
+@import "../../assests/scss/variants.scss";
+
+.todoList {
+    overflow-y   : scroll;
+    height       : -webkit-fill-available;
+    padding      : 0 35px;
+    transition   : all 0.9s ease;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow   : inset 0 0 5px grey;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background   : $primary-color-hover;
+        border-radius: 5px;
+
+        &:hover {
+            background: $primary-color;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .todoList {
+        height: 80%;
+    }
+}
