@@ -4,19 +4,12 @@ import { addTodoThunk, updateTodoThunk } from "../../store/thunk";
 import "./TodoForm.scss";
 
 const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
-  // console.log("gdgdgdgdgdg")
-  // console.log("🚀 ~ file: index.jsx ~ line 8 ~ TodoForm ~ name", name);
 
   const todoList = useSelector((state) => state.todoList);
   const [value, setValue] = useState("");
   const [deadline, setDeadline] = useState("");
-  // const [nameEdit, setNameEdit] = useState("");
-  // console.log("🚀 ~ file: index.jsx ~ line 14 ~ TodoForm ~ nameEdit", nameEdit);
 
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   setNameEdit(name);
-  // }, [name]);
   useEffect(() => {
     if (todoItem !== undefined) {
       setValue(todoItem.title);
@@ -83,7 +76,6 @@ const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
           className="todo-name"
           required
           value={value}
-          // defaultValue={nameEdit ? nameEdit : "Todo Name ..."}
           onChange={(e) => setValue(e.target.value)}
         />
         <p>Deadline</p>
