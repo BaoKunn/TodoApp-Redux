@@ -15,14 +15,15 @@ toast.configure();
 function App() {
   const loading = useSelector(state => state.loading);
   const success = useSelector(state => state.success);
-  const todoList = useSelector(state => state.todoListFilter);
+  const todoList = useSelector(state => state.list.reducer);
+  
 
   const dispatch = useDispatch();
 
   //get Todo
   useEffect(() => {
-    dispatch(getTodosThunk());
-  }, [dispatch]);
+    dispatch(getTodosThunk(todoList));
+  },[dispatch, todoList]);
 
   //Toast noti
   useEffect(() => {
@@ -30,6 +31,8 @@ function App() {
       toast.success(loading, { autoClose: 2000 });
     }
   }, [loading, success, todoList]);
+
+
 
   return (
     <div className="App">

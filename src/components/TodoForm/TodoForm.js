@@ -5,7 +5,8 @@ import "./TodoForm.scss";
 
 const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
 
-  const todoList = useSelector((state) => state.todoList);
+  const todoList = useSelector((state) => state.list.todoList);
+  // console.log(todoList);
   const [value, setValue] = useState("");
   const [deadline, setDeadline] = useState("");
 
@@ -18,7 +19,6 @@ const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
   }, [todoItem]);
 
   const handleChangeDeadline = (value) => {
-    console.log(typeof value);
     setDeadline(value);
   };
 

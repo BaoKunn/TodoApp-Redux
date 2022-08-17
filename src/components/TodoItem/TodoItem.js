@@ -3,18 +3,16 @@ import classNames from "classnames";
 import moment from "moment";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setFilter } from "../../store/action";
-import { deleteTodoThunk, getTodosThunk, toggleTodoThunk } from "../../store/thunk";
+import { deleteTodoThunk, toggleTodoThunk } from "../../store/thunk";
 import "../FontAwesone";
 import Modal from "../Modal/Modal";
 import TodoForm from "../TodoForm/TodoForm";
 import "./TodoItem.scss";
 
 export const TodoItem = ({ todoItem }) => {
-    const [checked, setChecked] = useState(todoItem.isCompleted);
+    console.log(todoItem)
     const dispatch = useDispatch();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [newName, setNewName] = useState("")
 
     const checkDeadline = (todoItem) => {
         if (todoItem.deadline) {
@@ -28,15 +26,12 @@ export const TodoItem = ({ todoItem }) => {
     };
 
     const handleChangeComplete = () => {
-        const newTodo = { ...todoItem };
-        newTodo.isCompleted = !newTodo.isCompleted;
-        dispatch(toggleTodoThunk(newTodo));
-        setChecked(newTodo.isCompleted);
+        // const newTodo = { ...todoItem };
+        dispatch(toggleTodoThunk(todoItem));
     };
 
     const handleClickUpdate = (name) => {
         setIsModalOpen(true);
-        setNewName(name)
     };
 
     const handleClickDelete = () => {
@@ -47,12 +42,12 @@ export const TodoItem = ({ todoItem }) => {
         <div className="todoItem">
             <input
                 type="checkbox"
-                checked={checked}
+                checked={todoItem.isCompleted}
                 onChange={handleChangeComplete}
             />
             <div
                 className={classNames("todoItem__title", {
-                    todoItem__title_cpl: checked,
+                    todoItem__title_cpl: todoItem.isCompleted,
                 })}>
                 <span className="todoItem__title-name" onClick={handleChangeComplete}>
                     {todoItem.title}
@@ -61,7 +56,7 @@ export const TodoItem = ({ todoItem }) => {
                     <span
                         className={classNames("todoItem__title-deadline", {
                             todoItem__title_deadline_warring:
-                                checkDeadline(todoItem) && !checked,
+                                checkDeadline(todoItem) && !todoItem.isCompleted,
                         })}
                     >
                         {moment(todoItem.deadline).format("h:mm a, DD/MM/YYYY")}
