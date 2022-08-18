@@ -80,7 +80,7 @@ export const TodoItem = ({ todoItem }) => {
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
         <TodoForm
           todoItem={todoItem}
-          title="Edit Todo"
+          title="Edit Todo:"
           setIsModalOpen={setIsModalOpen}
         ></TodoForm>
       </Modal>

@@ -15,8 +15,6 @@ function App() {
   const success = useSelector((state) => state.success);
   const todoList = useSelector((state) => state.list.todoList);
 
-  console.log(todoList);
-
   const dispatch = useDispatch();
 
   const [filterState, setFilterState] = useState("all");

@@ -17,7 +17,7 @@ const Header = () => {
       </button>
 
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <TodoForm title="New Todo" setIsModalOpen={setIsModalOpen}></TodoForm>
+        <TodoForm title="New Todo:" setIsModalOpen={setIsModalOpen}></TodoForm>
       </Modal>
     </div>
   );

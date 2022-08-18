@@ -10,9 +10,18 @@
     padding         : 20px;
 
     &__header * {
+        float: left;
         font-weight: 600;
         font-size  : 1.5rem;
-        margin     : 0 0 20px;
+        margin     : 0 0 14px;
+        padding-left: 20px;
+    }
+    &__deadline * {
+        float: left;
+        font-weight: 600;
+        font-size  : 1.5rem;
+        margin     : 14px 0;
+        padding-left: 20px;
     }
 }
 
@@ -34,7 +43,7 @@
 }
 
 .todo-deadline {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     width        : 80%;
     height       : 36px;
     padding      : 0 12px;

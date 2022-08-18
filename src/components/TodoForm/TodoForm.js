@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodoThunk, updateTodoThunk } from "../../store/thunk";
 import "./TodoForm.scss";
 
-const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
+const TodoForm = ({ setIsModalOpen, title, todoItem }) => {
   const todoList = useSelector((state) => state.list.todoList);
   const [value, setValue] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -76,7 +76,9 @@ const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <p>Deadline</p>
+        <div className="todo-form__deadline">
+          <h2>Deadline:</h2>
+        </div>
         <input
           type="datetime-local"
           className="todo-deadline"
