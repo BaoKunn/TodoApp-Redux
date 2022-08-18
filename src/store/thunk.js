@@ -22,18 +22,16 @@ export const updateTodoThunk = createAsyncThunk("update", async (todo) => {
   return response.data;
 });
 
-
 export const deleteTodoThunk = createAsyncThunk("delete", async (id) => {
   await axiosInstance.delete(`/todo/${id}`);
   const response = await axiosInstance.get("/todo");
   return response.data;
 });
 
-
 export const toggleTodoThunk = createAsyncThunk("toggle", async (todo) => {
-    await axiosInstance.put(`/todo/${todo.id}`,{
-        isCompleted: !todo.isCompleted,
-    })
-    const response = await axiosInstance.get('/todo');
-   return response.data;
+  await axiosInstance.put(`/todo/${todo.id}`, {
+    isCompleted: !todo.isCompleted,
+  });
+  const response = await axiosInstance.get("/todo");
+  return response.data;
 });

@@ -3,19 +3,19 @@ import classNames from "classnames";
 import "./Modal.scss";
 
 const Modal = ({ isModalOpen, setIsModalOpen, children }) => {
-    return (
-        <div
-            className={classNames("modal", {
-                modal__hidden: !isModalOpen,
-            })}
-        >
-            <div
-                className="modal__overlay"
-                onClick={() => setIsModalOpen(false)}
-            ></div>
-            <div className="modal__body">{children}</div>
-        </div>
-    );
+  return (
+    <div
+      className={classNames("modal", {
+        modal__hidden: !isModalOpen,
+      })}
+    >
+      <div
+        className="modal__overlay"
+        onClick={() => setIsModalOpen(false)}
+      ></div>
+      <div className="modal__body">{children}</div>
+    </div>
+  );
 };
 
 export default Modal;

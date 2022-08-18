@@ -6,7 +6,6 @@ export default function TodoList({ filterState }) {
   const todos = useSelector((state) => state.list.todoList);
 
   const todoClone = [...todos];
-  console.log(todoClone);
   return (
     <div className="todoList">
       {todoClone?.length === 0 ? (

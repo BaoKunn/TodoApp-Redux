@@ -4,9 +4,7 @@ import { addTodoThunk, updateTodoThunk } from "../../store/thunk";
 import "./TodoForm.scss";
 
 const TodoForm = ({ setIsModalOpen, title, todoItem, name }) => {
-
   const todoList = useSelector((state) => state.list.todoList);
-  // console.log(todoList);
   const [value, setValue] = useState("");
   const [deadline, setDeadline] = useState("");
 

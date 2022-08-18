@@ -9,8 +9,6 @@ import TodoList from "./components/TodoList/TodoList";
 import { getTodosThunk } from "./store/thunk";
 
 toast.configure();
-// toast.success()
-// toast.c
 
 function App() {
   const loading = useSelector((state) => state.loading);
