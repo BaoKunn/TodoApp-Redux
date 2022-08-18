@@ -6,6 +6,7 @@ export const TodoListSlice = createSlice({
   name: "list",
   initialState: {
     todoList: [],
+    filter: 'all',
     todoListFilter: [],
   },
 
@@ -43,7 +44,6 @@ export const TodoListSlice = createSlice({
       })
       .addCase(toggleTodoThunk.fulfilled, (state, action) => {
         state.todoList = action.payload
-        console.log(action.payload)
         toast.success('Check todo success', {autoClose: 1000})
       })
   }

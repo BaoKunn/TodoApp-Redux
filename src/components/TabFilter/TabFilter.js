@@ -1,36 +1,55 @@
 
 import "./TabFilter.scss";
 import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
-export default function TabFilter() {
-    const dispatch = useDispatch();
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
-    const filter = useSelector((state) => state.filter);
+export default function TabFilter({setFilterState}) {
+    const [status, setStatus] = useState('all')
+
+    const clickAll = () => {
+        setFilterState("all");
+        setStatus("all")
+
+    }
+
+    const clickACtive = () => {
+        setFilterState("active");
+        setStatus("active")
+    }
+
+    const clickComplete = () => {
+        setFilterState("complete");
+        setStatus("complete")
+    }
+
+
+    // const filter = useSelector((state) => state.list.filter);
 
     const todoList = useSelector((state) => state.list.todoList);
     return (
         <div className="filter">
             <button
                 className={classNames(" btn-filter", {
-                    btn__active: filter === "all",
+                    btn__active: status === "all",
                 })}
-                onClick={() => dispatch(("all"))}
+                onClick={clickAll}
             >
                 All ({todoList.length})
             </button>
             <button
                 className={classNames(" btn-filter", {
-                    btn__active: filter === "active",
+                    btn__active: status === "active",
                 })}
-                onClick={() => dispatch(("active"))}
+                onClick={clickACtive}
             >
                 Active ({todoList.filter((todo) => todo.isCompleted === false).length})
             </button>
             <button
                 className={classNames(" btn-filter", {
-                    btn__active: filter === "complete",
+                    btn__active: status === "complete",
                 })}
-                onClick={() => dispatch(("complete"))}
+                onClick={clickComplete}
             >
                 Completed ({todoList.filter((todo) => todo.isCompleted === true).length}
                 )
