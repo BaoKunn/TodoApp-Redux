@@ -1,6 +1,6 @@
 import { TodoItem } from "../TodoItem/TodoItem";
-import "./TodoList.scss";
 import { useSelector } from "react-redux/es/exports";
+import "./TodoList.scss";
 
 export default function TodoList({ filterState }) {
   const todos = useSelector((state) => state.list.todoList);

@@ -29,7 +29,7 @@ export const TodoItem = ({ todoItem }) => {
     dispatch(toggleTodoThunk(todoItem));
   };
 
-  const handleClickUpdate = (name) => {
+  const handleClickUpdate = () => {
     setIsModalOpen(true);
   };
 

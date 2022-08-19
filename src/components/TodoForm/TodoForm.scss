@@ -18,8 +18,8 @@
     }
     &__deadline * {
         float: left;
-        font-weight: 600;
-        font-size  : 1.5rem;
+        font-weight: 500;
+        font-size  : 1.3rem;
         margin     : 14px 0;
         padding-left: 20px;
     }
@@ -61,6 +61,7 @@
 .form__control {
     display        : flex;
     justify-content: flex-end;
+    padding-right: 12px;
 }
 
 .btn {

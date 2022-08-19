@@ -33,7 +33,7 @@ const TodoForm = ({ setIsModalOpen, title, todoItem }) => {
           title: value,
           deadline: deadline,
           id: todoItem.id,
-          isCompleted: false,
+          isCompleted: todoItem.isCompleted,
         })
       );
     } else {
@@ -46,7 +46,7 @@ const TodoForm = ({ setIsModalOpen, title, todoItem }) => {
         })
       );
     }
-
+    
     setDeadline("");
     setValue("");
     setIsModalOpen(false);
