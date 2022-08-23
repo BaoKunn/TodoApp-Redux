@@ -31,10 +31,10 @@ export const updateTodoThunk = createAsyncThunk("update", async (todo) => {
       isCompleted: todo.isCompleted,
     });
     const response = await axiosInstance.get(`/todo`);
-    toast.success("Add todo success", { autoClose: 1000 })
+    toast.success("Update todo success", { autoClose: 1000 })
     return response.data;
   } catch (error) {
-    toast.error("Error todo success", { autoClose: 1000 })
+    toast.error("Update todo error", { autoClose: 1000 })
   }
 });
 
@@ -45,7 +45,7 @@ export const deleteTodoThunk = createAsyncThunk("delete", async (id) => {
     toast.success("Delete todo success", { autoClose: 1000 })
     return response.data;
   } catch (error) {
-    toast.error("Delete todo success", { autoClose: 1000 })
+    toast.error("Delete todo error", { autoClose: 1000 })
   }
 });
 

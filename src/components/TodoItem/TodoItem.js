@@ -67,9 +67,7 @@ export const TodoItem = ({ todoItem }) => {
       <FontAwesomeIcon
         className="icon todoItem__icon-edit"
         icon={["fa", "edit"]}
-        onClick={() => {
-          handleClickUpdate(todoItem.name);
-        }}
+        onClick={handleClickUpdate}
       />
       <FontAwesomeIcon
         className=" icon todoItem__icon-del"
