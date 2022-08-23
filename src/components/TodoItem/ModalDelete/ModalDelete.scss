@@ -29,7 +29,7 @@
 .modal__delete {
     --growth-from: 0.7;
     --growth-to  : 1;
-    height: 250px;
+    height: auto;
     width: 340px;
     background-color: #fff;
     border-radius: 4px;
@@ -41,18 +41,17 @@
 }
 
 .modal__title{
-    float: left;
 
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size  : 1.5rem;
 
-    padding: 0 0 20px 20px;
+    padding    : 20px;
 }
 
 .form__control {
     display        : flex;
     justify-content: flex-end;
-    padding-right: 16px;
+    padding-right  : 16px;
 }
 .todo-form {
     background-color: $white-color;

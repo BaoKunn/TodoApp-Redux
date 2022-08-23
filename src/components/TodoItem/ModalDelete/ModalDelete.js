@@ -18,23 +18,9 @@ const ModalDelete = ({ todoItem, close, open }) => {
     >
       <div className="modal__overlay" onClick={() => open(false)}></div>
       <div className="modal__delete">
-        <div className="modal__title">Do you want delete todo ?</div>
-        <form className="form__input" >
-        <input
-          type="text"
-          className="todo-name"
-          required
-          value={todoItem.title}
-        />
-        <div className="todo-form__deadline">
-          <h2>Deadline:</h2>
+        <div className="modal__title">
+          Do you want delete todo {todoItem.title}
         </div>
-        <input
-          type="datetime-local"
-          className="todo-deadline"
-          value={todoItem.deadline}
-        />
-      </form>
         <div className="form__control">
           <input
             type="button"
@@ -56,5 +42,3 @@ const ModalDelete = ({ todoItem, close, open }) => {
 };
 
 export default ModalDelete;
-
-
